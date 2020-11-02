@@ -1,7 +1,7 @@
 const CustomError = require("../extensions/custom-error");
 
 module.exports = function transform(arr) {
-  
+
   if (!Array.isArray(arr)){
     throw new Error();
   }
@@ -13,7 +13,7 @@ module.exports = function transform(arr) {
     if(arr[i] === '--discard-next'){
       i=i+2;
     } else if (arr[i] === '--discard-prev'){
-      array.pop();
+      array.splice(i-1, 1);
     } else if(arr[i] === '--double-next'){
 
       if(i === arr.length-1){
